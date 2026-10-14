@@ -2294,3 +2294,201 @@ body {
         margin-bottom: 5px;
     }
 }
+
+
+
+/* =========================================
+   FACEQUIZ - RESPONSIVIDADE MULTINAVEGADOR
+   Safari, Chrome, Android, iPhone e desktop
+========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Contêiner principal */
+.app {
+    width: 100%;
+    max-width: 850px;
+    min-width: 0;
+    max-height: 100%;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+/* Impede que mídias ultrapassem a tela */
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+    font: inherit;
+}
+
+button {
+    touch-action: manipulation;
+}
+
+/* Evita conteúdo maior que a largura disponível */
+#telaInicial,
+#telaRanking,
+#jogo,
+#resultado,
+#faseSurpresa,
+#jogoSurpresa {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* Perguntas e alternativas */
+#jogo .alternativas,
+#jogoSurpresa .alternativas-surpresa {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(6px, 1.5vw, 12px);
+    width: 100%;
+}
+
+.alternativa {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+/* Imagem e vídeo dentro da área disponível */
+.imagem-box {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.imagem-box img,
+.imagem-box video {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    body {
+        padding: 8px;
+    }
+
+    .app {
+        padding: clamp(8px, 2vw, 14px);
+        border-radius: 16px;
+    }
+
+    h1,
+    .titulo,
+    .titulo-surpresa {
+        font-size: clamp(22px, 6vw, 34px);
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+    }
+
+    .pergunta {
+        font-size: clamp(16px, 4.5vw, 21px);
+        line-height: 1.25;
+    }
+
+    .alternativa {
+        min-height: 44px;
+        padding: 9px 6px;
+        font-size: clamp(13px, 3.6vw, 16px);
+    }
+
+    .imagem-box img,
+    .imagem-box video {
+        max-height: 24dvh;
+    }
+}
+
+/* CELULARES COM TELA BAIXA */
+@media (max-height: 700px) {
+    .app {
+        padding: 8px;
+    }
+
+    #jogo .imagem-box,
+    #jogoSurpresa .imagem-box {
+        height: 16dvh;
+        min-height: 65px;
+    }
+
+    #jogo .imagem-box img,
+    #jogoSurpresa .imagem-box video {
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+    }
+
+    #jogo .topo,
+    #jogoSurpresa .topo {
+        margin-bottom: 5px;
+    }
+}
+
+/* TABLETS */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        padding: 16px;
+    }
+
+    .app {
+        max-width: 760px;
+    }
+}
+
+/* COMPUTADORES */
+@media (min-width: 1025px) {
+    body {
+        padding: 24px;
+    }
+
+    .app {
+        max-width: 850px;
+    }
+}
+
+/* Acessibilidade: respeita a preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+

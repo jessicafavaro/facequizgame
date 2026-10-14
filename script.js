@@ -112,7 +112,7 @@ const bancoPerguntas = [
 
     {
         imagem:
-            "images/Naruto.jfif",
+            "images/naruto.jfif",
 
         resposta:
             "Naruto",

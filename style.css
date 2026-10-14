@@ -2108,3 +2108,189 @@ video {
         min-height: 40px;
     }
 }
+
+
+
+/* FACEQUIZ — AJUSTE FINAL PARA IPHONE */
+
+/* Bloqueia a rolagem da página */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Usa o contêiner real do projeto */
+.app {
+    width: 100%;
+    max-width: 850px;
+    max-height: 100%;
+    padding: clamp(10px, 2dvh, 18px);
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+/* Mantém as telas dentro do contêiner */
+#telaInicial,
+#telaRanking,
+#jogo,
+#resultado,
+#faseSurpresa,
+#jogoSurpresa {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+}
+
+/* Tela inicial mais compacta */
+#telaInicial .logo {
+    font-size: clamp(30px, 6dvh, 48px);
+    margin-bottom: 0;
+}
+
+#telaInicial .titulo {
+    font-size: clamp(30px, 7vw, 42px);
+    line-height: 1.1;
+}
+
+#telaInicial .subtitulo {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+#telaInicial .descricao {
+    padding: 12px;
+    margin-bottom: 14px;
+}
+
+#telaInicial .descricao p {
+    margin: 7px 0;
+    font-size: 14px;
+}
+
+/* Tela das perguntas */
+#jogo .topo,
+#jogoSurpresa .topo {
+    margin-bottom: 8px;
+    gap: 6px;
+}
+
+#jogo .progresso-container {
+    margin-bottom: 10px;
+}
+
+#jogo .timer,
+#jogoSurpresa .timer {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 auto 8px;
+}
+
+#jogo .imagem-box,
+#jogoSurpresa .imagem-box {
+    height: 20dvh;
+    max-height: 170px;
+    min-height: 90px;
+    padding: 4px;
+    margin: 6px auto;
+}
+
+#jogo .imagem-box img,
+#jogoSurpresa .imagem-box video {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#jogo .pergunta,
+#jogoSurpresa .pergunta {
+    font-size: clamp(17px, 4.5vw, 22px);
+    line-height: 1.2;
+    margin: 8px 0;
+}
+
+#jogo .alternativas,
+#jogoSurpresa .alternativas-surpresa {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin-top: 6px;
+}
+
+#jogo .alternativa,
+#jogoSurpresa .alternativa {
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px 5px;
+    font-size: clamp(13px, 3.5vw, 16px);
+    overflow-wrap: anywhere;
+}
+
+.feedback {
+    min-height: 0;
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+/* Fase surpresa */
+#faseSurpresa .surpresa-icone {
+    font-size: clamp(35px, 7dvh, 55px);
+    margin-bottom: 4px;
+}
+
+#faseSurpresa .titulo-surpresa {
+    font-size: clamp(25px, 6vw, 36px);
+    margin-bottom: 6px;
+}
+
+#faseSurpresa .subtitulo {
+    margin-bottom: 8px;
+}
+
+#faseSurpresa .surpresa-box {
+    padding: 12px;
+    margin: 10px 0;
+}
+
+#faseSurpresa .surpresa-box p {
+    font-size: 14px;
+    margin: 7px 0;
+}
+
+/* Ajuste extra para telas baixas */
+@media (max-height: 700px) {
+    #jogo .imagem-box,
+    #jogoSurpresa .imagem-box {
+        height: 16dvh;
+        min-height: 75px;
+    }
+
+    #telaInicial .descricao {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    #jogo .topo,
+    #jogoSurpresa .topo {
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceQuiz</title>
+    <link rel="stylesheet" href="style-facequiz.css">
+    <link rel="stylesheet" href="script-facequiz.js">
+
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ==============================
+             TELA INICIAL
+        =============================== -->
+
+        <section id="telaInicial">
+
+            <!-- BOTÃO RANKING -->
+            <button class="btn-ranking-topo" id="btnVerRanking">
+
+                🏆 Ranking
+
+            </button>
+
+
+            <div class="logo">
+                📸
+            </div>
+
+
+            <h1 class="titulo">
+                FaceQuiz
+            </h1>
+
+
+            <p class="subtitulo">
+                Você consegue reconhecer todos?
+            </p>
+
+
+            <div class="descricao">
+
+                <p>🎯 20 perguntas</p>
+
+                <p>⏱️ 15 segundos por pergunta</p>
+
+                <p>🏆 Quanto mais rápido, mais pontos</p>
+
+                <p>🥇 Ranking dos melhores jogadores</p>
+
+            </div>
+
+
+            <button class="btn btn-principal" id="btnComecar">
+
+                🚀 Começar o desafio
+
+            </button>
+
+        </section>
+
+
+
+
+
+        <!-- ==============================
+     TELA DE RANKING
+================================ -->
+
+        <section id="telaRanking" class="oculto">
+
+            <div class="ranking-header">
+
+                <div class="ranking-icone">
+                    🏆
+                </div>
+
+                <h1 class="titulo">
+                    Ranking
+                </h1>
+
+                <p class="subtitulo">
+                    Os melhores jogadores do FaceQuiz
+                </p>
+
+            </div>
+
+
+            <!-- TOP 3 -->
+
+            <div id="podioRanking" class="podio-ranking">
+            </div>
+
+
+            <!-- DEMAIS JOGADORES -->
+
+            <div id="listaRankingTela" class="lista-ranking-tela">
+            </div>
+
+
+            <!-- BOTÃO VOLTAR -->
+
+            <button class="btn btn-ranking" id="btnVoltarRanking">
+
+                ← Voltar para a tela inicial
+
+            </button>
+
+
+
+            <button class="btn btn-reset-ranking" id="btnResetRanking">
+
+                🗑️ Resetar Ranking
+
+            </button>
+
+        </section>
+
+
+
+
+
+        <!-- ==============================
+             TELA DO JOGO
+        =============================== -->
+
+        <section id="jogo" class="oculto">
+
+            <div class="topo">
+
+                <div class="questao">
+
+                    Pergunta
+                    <span id="numero">
+                        1
+                    </span>
+
+                    de 20
+
+                </div>
+
+                <div class="pontuacao-atual">
+
+                    🏆
+
+                    <span id="pontos">
+                        0
+                    </span>
+
+                    pontos
+
+                </div>
+
+            </div>
+
+
+            <!-- Barra de progresso -->
+
+            <div class="progresso-container">
+
+                <div class="progresso" id="progresso">
+                </div>
+
+            </div>
+
+
+            <!-- Cronômetro -->
+
+            <div class="timer" id="timer">
+
+                15
+
+            </div>
+
+
+            <!-- Imagem -->
+
+            <div class="imagem-box">
+
+                <img id="imagem" src="" alt="Pessoa">
+
+            </div>
+
+
+            <!-- Pergunta -->
+
+            <div class="pergunta">
+
+                Quem é essa pessoa?
+
+            </div>
+
+
+            <!-- Alternativas -->
+
+            <div class="alternativas" id="alternativas">
+            </div>
+
+
+            <!-- Feedback -->
+
+            <div class="feedback" id="feedback">
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             RESULTADO FINAL
+        =============================== -->
+
+        <section id="resultado">
+
+            <div class="trofeu">
+                🏆
+            </div>
+
+            <h2 class="resultado-titulo">
+                Desafio concluído!
+            </h2>
+
+            <div class="resultado-pontos" id="resultadoPontos">
+
+                0
+
+            </div>
+
+            <p>
+                pontos
+            </p>
+
+
+            <!-- Estatísticas -->
+
+            <div class="estatisticas">
+
+                <div class="estatistica">
+
+                    <strong id="totalAcertos">
+                        0
+                    </strong>
+
+                    Acertos
+
+                </div>
+
+
+                <div class="estatistica">
+
+                    <strong id="totalErros">
+                        0
+                    </strong>
+
+                    Erros
+
+                </div>
+
+
+                <div class="estatistica">
+
+                    <strong id="percentual">
+                        0%
+                    </strong>
+
+                    Aproveitamento
+
+                </div>
+
+            </div>
+
+
+            <!-- Ranking -->
+
+            <div class="ranking">
+
+                <h2>
+                    🏆 Ranking
+                </h2>
+
+                <div id="listaRanking">
+                </div>
+
+            </div>
+
+
+            <br>
+
+
+            <button class="btn btn-principal" id="btnJogarNovamente">
+
+                🔄 Jogar novamente
+
+            </button>
+
+        </section>
+
+
+        <!-- ==============================
+     FASE SURPRESA
+================================ -->
+
+        <section id="faseSurpresa" class="oculto">
+
+            <div class="surpresa-icone">
+                🎁
+            </div>
+
+            <h1 class="titulo-surpresa">
+                FASE SURPRESA!
+            </h1>
+
+            <p class="subtitulo">
+                Você chegou até aqui...
+            </p>
+
+            <div class="surpresa-box">
+
+                <p>
+                    🔥 Uma pergunta especial!
+                </p>
+
+                <p>
+                    ⏱️ Você terá apenas 30 segundos.
+                </p>
+
+                <p>
+                    💰 Se acertar, ganha
+                    <strong>+500 pontos!</strong>
+                </p>
+
+            </div>
+
+            <button class="btn btn-principal" id="btnComecarSurpresa"type="button">
+
+                ⚡ Aceitar o desafio
+
+            </button>
+
+        </section>
+
+
+        <!-- ==============================
+     JOGO SURPRESA
+================================ -->
+
+        <section id="jogoSurpresa" class="oculto">
+
+            <div class="topo">
+
+                <div class="questao">
+
+                    🎁 Fase Surpresa
+
+                </div>
+
+                <div class="pontuacao-atual">
+
+                    🏆
+                    <span id="pontosSurpresa">
+                        0
+                    </span>
+
+                    pontos
+
+                </div>
+
+            </div>
+
+
+            <div class="timer" id="timerSurpresa">
+
+                30
+
+            </div>
+
+
+            <div class="imagem-box">
+
+                <video id="videoSurpresa" autoplay muted playsinline controls loop>
+                    <source src="videos/fase-surpresa.mp4" type="video/mp4"> /* incluir caminho do video*/
+                </video>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                Quem é essa pessoa?
+
+            </div>
+
+
+            <div class="alternativas-surpresa" id="alternativasSurpresa">
+   
+
+            </div>
+
+
+            <div class="feedback" id="feedbackSurpresa" aria-live="polite">
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ==============================
+         MODAL DO NOME
+    =============================== -->
+
+    <div class="modal oculto" id="modalNome">
+
+        <div class="modal-conteudo">
+
+            <h2>
+                👋 Bem-vindo!
+            </h2>
+
+            <p>
+                Digite seu nome para entrar no ranking:
+            </p>
+
+            <br>
+
+            <input type="text" id="nomeJogador" placeholder="Seu nome" maxlength="20">
+
+            <button class="btn btn-principal" id="btnIniciar">
+
+                Começar
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript externo -->
+    <script src="script-facequiz.js"></script>
+
+</body>

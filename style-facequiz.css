@@ -1,0 +1,1837 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left,
+            #df552b,
+            transparent 15%),
+        linear-gradient(135deg,
+            #df552b,
+            #0d033d,
+            #a78908);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.app {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ==========================================
+   TELA INICIAL
+========================================== */
+
+#telaInicial {
+
+    text-align: center;
+
+}
+
+
+.logo {
+
+    font-size: 60px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.titulo {
+
+    font-size: 52px;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(90deg,
+            #ffffff,
+            #ffb347);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+.subtitulo {
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.descricao {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.descricao p {
+
+    margin: 10px 0;
+
+}
+
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+.btn {
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 14px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        0.3s;
+}
+
+
+.btn-principal {
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,
+            #ffd13c,
+            #eb5a17);
+
+    box-shadow:
+        0 8px 25px rgba(255, 80, 100, 0.35);
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.topo {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        20px;
+}
+
+
+.questao {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.pontuacao-atual {
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    padding:
+        10px 16px;
+
+    border-radius:
+        12px;
+
+}
+
+
+/* ==========================================
+   PROGRESSO
+========================================== */
+
+.progresso-container {
+
+    width: 100%;
+
+    height: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        10px;
+
+    margin-bottom:
+        25px;
+
+    overflow:
+        hidden;
+}
+
+
+.progresso {
+
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(90deg,
+            #ffd13c,
+            #eb5a17);
+
+    transition:
+        width 0.4s;
+}
+
+
+/* ==========================================
+   CRONÔMETRO
+========================================== */
+
+.timer {
+
+    width: 75px;
+
+    height: 75px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin:
+        0 auto 20px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border:
+        4px solid #ff9a3c;
+
+    font-size:
+        24px;
+
+    font-weight:
+        bold;
+
+    transition:
+        0.3s;
+}
+
+
+.timer.urgente {
+
+    border-color:
+        #ff304f;
+
+    color:
+        #ff304f;
+
+    animation:
+        pulsar 0.7s infinite;
+}
+
+
+@keyframes pulsar {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* ==========================================
+   IMAGEM
+========================================== */
+
+.imagem-box {
+
+    width: 100%;
+
+    height: 320px;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    padding: 10px;
+    
+    box-sizing: border-box;
+        
+    border-radius:
+        18px;
+}
+
+
+.imagem-box img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 12px;
+    transition:
+        transform 0.5s;
+}
+
+
+.imagem-box:hover img {
+
+    transform:
+        scale(1.04);
+
+}
+
+@media (max-width:600px){
+    .imagem-box{
+        height: 260px;
+        padding: 8px;
+    }
+}
+
+
+
+/* ==========================================
+   PERGUNTA
+========================================== */
+
+.pergunta {
+
+    text-align:
+        center;
+
+    font-size:
+        25px;
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+/* ==========================================
+   ALTERNATIVAS
+========================================== */
+
+.alternativas {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        14px;
+
+}
+
+
+.alternativa {
+
+    padding:
+        16px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.25s;
+}
+
+
+.alternativa:hover {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.alternativa:disabled {
+
+    cursor:
+        not-allowed;
+
+}
+
+
+.correta {
+
+    background:
+        #16c784 !important;
+
+    border-color:
+        #16c784 !important;
+
+    animation:
+        acerto 0.5s;
+}
+
+
+.errada {
+
+    background:
+        #ff3d57 !important;
+
+    border-color:
+        #ff3d57 !important;
+
+    animation:
+        erro 0.5s;
+}
+
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+@keyframes acerto {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes erro {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-8px);
+    }
+
+}
+
+
+/* ==========================================
+   FEEDBACK
+========================================== */
+
+.feedback {
+
+    text-align:
+        center;
+
+    min-height:
+        30px;
+
+    margin-top:
+        18px;
+
+    font-size:
+        20px;
+
+    font-weight:
+        bold;
+}
+
+
+/* ==========================================
+   RESULTADO
+========================================== */
+
+#resultado {
+
+    display:
+        none;
+
+    text-align:
+        center;
+}
+
+
+.trofeu {
+
+    font-size:
+        75px;
+}
+
+
+.resultado-titulo {
+
+    font-size:
+        38px;
+
+    margin:
+        10px 0;
+}
+
+
+.resultado-pontos {
+
+    font-size:
+        48px;
+
+    font-weight:
+        bold;
+
+    color:
+        #ffb347;
+
+    margin:
+        15px;
+}
+
+
+.estatisticas {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    margin:
+        25px 0;
+
+    flex-wrap:
+        wrap;
+}
+
+
+.estatistica {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    padding:
+        15px 25px;
+
+    border-radius:
+        15px;
+
+    min-width:
+        130px;
+}
+
+
+.estatistica strong {
+
+    display:
+        block;
+
+    font-size:
+        25px;
+}
+
+
+/* ==========================================
+   RANKING
+========================================== */
+
+.ranking {
+
+    margin-top:
+        30px;
+
+    text-align:
+        left;
+}
+
+
+.ranking h2 {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        15px;
+}
+
+
+.ranking-item {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    padding:
+        13px 18px;
+
+    border-radius:
+        12px;
+
+    margin-bottom:
+        8px;
+}
+
+
+.primeiro {
+
+    border:
+        1px solid #ffd700;
+
+}
+
+
+.segundo {
+
+    border:
+        1px solid #c0c0c0;
+
+}
+
+
+.terceiro {
+
+    border:
+        1px solid #cd7f32;
+
+}
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    padding:
+        20px;
+
+    z-index:
+        100;
+}
+
+
+.modal-conteudo {
+
+    background:
+        #241039;
+
+    padding:
+        35px;
+
+    border-radius:
+        20px;
+
+    text-align:
+        center;
+
+    width:
+        100%;
+
+    max-width:
+        400px;
+}
+
+
+.modal-conteudo h2 {
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.modal-conteudo input {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    border:
+        none;
+
+    border-radius:
+        10px;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        16px;
+
+    outline:
+        none;
+}
+
+
+/* ==========================================
+   CLASSE PARA ESCONDER ELEMENTOS
+========================================== */
+
+.oculto {
+
+    display:
+        none !important;
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media(max-width: 600px) {
+
+    .app {
+
+        padding:
+            20px;
+
+    }
+
+
+    .titulo {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .alternativas {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .imagem-box {
+
+        height:
+            250px;
+
+    }
+
+
+    .topo {
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+
+    }
+
+}
+
+/* ==========================================
+   FASE SURPRESA
+========================================== */
+
+.surpresa-icone {
+
+    font-size: 80px;
+
+    margin-bottom: 10px;
+
+    animation:
+        pulsar 1s infinite;
+
+}
+
+
+.titulo-surpresa {
+
+    font-size: 45px;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(90deg,
+            #ffd700,
+            #ff7a18,
+            #061b79);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    margin-bottom: 10px;
+
+}
+
+
+.surpresa-box {
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border:
+        1px solid rgba(255, 215, 0, 0.35);
+
+    border-radius:
+        18px;
+
+    padding:
+        25px;
+
+    margin:
+        25px 0;
+
+}
+
+
+.surpresa-box p {
+
+    margin:
+        10px 0;
+
+    font-size:
+        18px;
+
+}
+
+
+.surpresa-box strong {
+
+    color:
+        #ffd700;
+
+}
+
+
+#jogoSurpresa {
+
+    text-align:
+        center;
+
+}
+
+
+#jogoSurpresa .imagem-box {
+
+    border:
+        3px solid #ffd700;
+
+    box-shadow:
+        0 0 30px rgba(255, 215, 0, 0.25);
+
+}
+
+
+#timerSurpresa {
+
+    border-color:
+        #ffd700;
+
+}
+
+
+#timerSurpresa.urgente {
+
+    border-color:
+        #ff304f;
+
+    color:
+        #ff304f;
+
+}
+
+
+#videoSurpresa{
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 320px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+    border-radius: 18px;
+    background-color: #df552b; /* ver fundo do video se precisa ser o #000*/
+}
+
+@media(max-width: 600px) {
+
+    .titulo-surpresa {
+
+        font-size:
+            34px;
+
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    #videoSurpresa {
+
+        height: 206px;
+
+    }
+
+}
+
+
+/* ==========================================
+   BOTÃO RANKING
+========================================== */
+
+.btn-ranking {
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border:
+        1px solid rgba(255, 215, 0, 0.45);
+
+}
+
+
+.btn-ranking:hover {
+
+    background:
+        rgba(255, 215, 0, 0.15);
+
+    border-color:
+        #ffd700;
+
+}
+
+
+/* ==========================================
+   TELA DE RANKING
+========================================== */
+
+#telaRanking {
+
+    text-align:
+        center;
+
+    animation:
+        aparecerRanking 0.4s ease;
+
+}
+
+
+@keyframes aparecerRanking {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.ranking-header {
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.ranking-icone {
+
+    font-size:
+        65px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+/* ==========================================
+   PÓDIO
+========================================== */
+
+.podio-ranking {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        flex-end;
+
+    gap:
+        12px;
+
+    margin:
+        25px 0 30px;
+
+}
+
+
+.podio-item {
+
+    width:
+        30%;
+
+    padding:
+        18px 10px;
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+}
+
+
+.podio-item.primeiro {
+
+    min-height:
+        150px;
+
+    border:
+        2px solid
+        #ffd700;
+
+    background:
+        rgba(255,215,0,0.12);
+
+}
+
+
+.podio-item.segundo {
+
+    min-height:
+        125px;
+
+    border:
+        2px solid
+        #c0c0c0;
+
+}
+
+
+.podio-item.terceiro {
+
+    min-height:
+        110px;
+
+    border:
+        2px solid
+        #cd7f32;
+
+}
+
+
+.podio-medalha {
+
+    font-size:
+        35px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.podio-nome {
+
+    font-weight:
+        bold;
+
+    font-size:
+        16px;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.podio-pontos {
+
+    color:
+        #ffd700;
+
+    font-weight:
+        bold;
+
+    margin-top:
+        7px;
+
+}
+
+
+/* ==========================================
+   LISTA DO RANKING
+========================================== */
+
+.lista-ranking-tela {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.ranking-tela-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        14px 18px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    border-radius:
+        13px;
+
+    transition:
+        0.25s;
+
+}
+
+
+.ranking-tela-item:hover {
+
+    background:
+        rgba(255,255,255,0.14);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.ranking-posicao {
+
+    font-weight:
+        bold;
+
+    min-width:
+        40px;
+
+    text-align:
+        left;
+
+}
+
+
+.ranking-nome {
+
+    flex:
+        1;
+
+    text-align:
+        left;
+
+    font-weight:
+        600;
+
+}
+
+
+.ranking-pontos {
+
+    color:
+        #ffd700;
+
+    font-weight:
+        bold;
+
+}
+
+
+/* ==========================================
+   RANKING VAZIO
+========================================== */
+
+.ranking-vazio {
+
+    padding:
+        35px 20px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border-radius:
+        18px;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.ranking-vazio .icone {
+
+    font-size:
+        50px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media(max-width: 600px) {
+
+    .podio-ranking {
+
+        gap:
+            6px;
+
+    }
+
+
+    .podio-item {
+
+        width:
+            33%;
+
+        padding:
+            14px 6px;
+
+    }
+
+
+    .podio-item.primeiro {
+
+        min-height:
+            135px;
+
+    }
+
+
+    .podio-item.segundo {
+
+        min-height:
+            115px;
+
+    }
+
+
+    .podio-item.terceiro {
+
+        min-height:
+            100px;
+
+    }
+
+
+    .podio-nome {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .podio-pontos {
+
+        font-size:
+            13px;
+
+    }
+
+}
+
+
+/* ==========================================
+   BOTÃO RESETAR RANKING
+========================================== */
+
+.btn-reset-ranking {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    background:
+        rgba(255, 60, 80, 0.08);
+
+    color:
+        #ff5c6c;
+
+    border:
+        1px solid
+        rgba(255, 60, 80, 0.35);
+
+}
+
+
+.btn-reset-ranking:hover {
+
+    background:
+        rgba(255, 60, 80, 0.18);
+
+    border-color:
+        #ff5c6c;
+
+    color:
+        #ffffff;
+
+}
+
+
+/* ==========================================
+   BOTÕES DA TELA INICIAL
+========================================== */
+
+.botoes-iniciais {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+    width:
+        100%;
+
+    margin-top:
+        20px;
+
+}
+
+
+.botoes-iniciais .btn {
+
+    flex:
+        1;
+
+    margin:
+        0;
+
+}
+
+
+/* Mantém os dois botões
+   com exatamente o mesmo visual */
+
+.botoes-iniciais .btn-principal {
+
+    width:
+        auto;
+
+}
+
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 600px) {
+
+    .botoes-iniciais {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .botoes-iniciais .btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* ==========================================
+   BOTÃO RANKING - CANTO SUPERIOR DIREITO
+========================================== */
+
+#telaInicial {
+
+    position:
+        relative;
+
+}
+
+
+.btn-ranking-topo {
+
+    position:
+        absolute;
+
+    top:
+        20px;
+
+    right:
+        20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        6px;
+
+    padding:
+        10px 18px;
+
+    border:
+        1px solid
+        rgba(255, 215, 0, 0.5);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.25s ease;
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+.btn-ranking-topo:hover {
+
+    background:
+        rgba(255, 215, 0, 0.15);
+
+    border-color:
+        #ffd700;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 20px
+        rgba(255, 215, 0, 0.15);
+
+}
+
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 600px) {
+
+    .btn-ranking-topo {
+
+        top:
+            12px;
+
+        right:
+            12px;
+
+        padding:
+            8px 12px;
+
+        font-size:
+            13px;
+
+    }
+
+}
+
+
+#faseSurpresa {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#videoSurpresa {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    object-position: center;
+    background: #000;
+    border-radius: 18px;
+    margin: 20px auto;
+}
+
+.alternativas-surpresa {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.alternativas-surpresa button {
+   padding:
+        16px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.25s;
+}
+
+.alternativas-surpresa button:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+    #videoSurpresa {
+        height: 240px;
+    }
+
+    .alternativas-surpresa {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+#jogoSurpresa .imagem-box {
+    width: 100%;
+    max-width: 600px;
+    height: 320px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 18px;
+    background: #000;
+}
+
+#videoSurpresa {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+#alternativasSurpresa {
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        14px;
+
+}
+
+#alternativasSurpresa .alternativa {
+    width: 100%;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    #jogoSurpresa .imagem-box {
+        height: 240px;
+    }
+
+    #alternativasSurpresa {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*
+.alternativa:hover {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.alternativa:disabled {
+
+    cursor:
+        not-allowed;
+
+}
+
+
+.correta {
+
+    background:
+        #16c784 !important;
+
+    border-color:
+        #16c784 !important;
+
+    animation:
+        acerto 0.5s;
+}
+
+
+.errada {
+
+    background:
+        #ff3d57 !important;
+
+    border-color:
+        #ff3d57 !important;
+
+    animation:
+        erro 0.5s;
+}

@@ -1683,12 +1683,10 @@ function iniciarFaseSurpresa() {
 
     const video = document.getElementById("videoSurpresa");
 
-    video.src = perguntaSurpresa.video;
+    video.src = "videos/fase-surpresa.mp4";
     video.load();
 
     video.currentTime = 0;
-    video.muted = false;
-    video.volume = 1;
 
     video.play().catch(erro => {
         console.log(
